@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="http:////at.alicdn.com/t/c/font_3691911_sjda8ixvycc.css">
+    <script src="./js/jquery-1.7.2.min.js"></script>
+</head>
+
+<body>
+    <div class="top">
+        <div class="logo">
+            <img src="./images/xiaologo.jpg" alt="">
+            <span>网易云音乐</span>
+        </div>
+        <div class="dow">下载APP</div>
+    </div>
+    <div class="nav">
+        <ul>
+            <li><a href="#" class="active">推荐音乐</a></li>
+            <li><a href="hotsong.html">热歌榜</a></li>
+            <li><a href="#">搜索</a></li>
+        </ul>
+    </div>
+    <h3 class="songs_list">推荐歌单</h3>
+    <div class="list">
+        <ul>
+        </ul>
+    </div>
+    <div class="bottom">
+        <img src="./images/logo.jpg" alt="">
+    </div>
+
+
+    <script>
+        $.ajax({
+            type: 'get',
+            url: 'http://iwenwiki.com:3000/personalized?limit=6',
+            dataType:'json',
+            success:function(res){
+                console.log(res);
+                let str='';
+                let arr =res.result;
+                $(arr).each(function(i,e){
+                    str+=`<li>
+                <span><i class="iconfont icon-yinle-copy"></i>${e.playCount}</span>
+                <img src=${e.picUrl}>
+                <p>${e.name}</p>
+                            </li>`
+                            $(".list>ul").empty();
+                            $(".list>ul").append(str);
+                })
+            }
+        });
+    </script>
+</body>
+
+</html>

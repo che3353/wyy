@@ -1,0 +1,32 @@
+.hotsongImg>img{
+    width: 100%;
+}
+.song_list{
+    width: 100%;
+}
+.xuhao{
+    position: relative;
+}
+.song{
+    padding-left: 35px;
+    font-size: 16px;
+    color: rgb(51, 51, 51);
+}
+.singer{
+    padding-left: 35px;
+    font-size: 14px;
+    color: rgb(150, 150, 183);
+}
+.song_list img{
+    width: 25px;
+    float: right;
+    margin-right: 5px;
+    margin-top: 10px;
+}
+.song_list span {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    display: inline-block;
+    margin-top: 5px;
+}
